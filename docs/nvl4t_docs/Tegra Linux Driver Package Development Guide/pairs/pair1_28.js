@@ -1,0 +1,20 @@
+var pairs =
+{
+"<release_type>":{"aarch64":1}
+,"aarch64":{"armhf":1}
+,"armhf":{"[more":1}
+,"[more":{"filenames":1}
+,"filenames":{"release":1}
+,"release":{"type":1,"section":1,"notes":1}
+,"type":{"usually":1}
+,"usually":{"preceded":1}
+,"preceded":{"<release_num>":1}
+,"<release_num>":{"<version_num>":1}
+,"<version_num>":{"release":1}
+,"section":{"1.0":1}
+,"1.0":{"release":1}
+,"notes":{"confirm":1}
+,"confirm":{"your":1}
+,"your":{"release":1}
+}
+;Search.control.loadWordPairs(pairs);

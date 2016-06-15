@@ -1,0 +1,10 @@
+.Cell_Bullet > span.WebWorks_Number
+{
+  text-indent: -7.9pt;
+}
+
+.Cell_Bullet > span.WebWorks_Number > *
+{
+  text-indent: 0;
+}
+

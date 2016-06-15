@@ -1,0 +1,20 @@
+var pairs =
+{
+"<platform":{"ver>":1}
+,"ver>":{"t210ref":1}
+,"t210ref":{"[more":1}
+,"[more":{"valid":1}
+,"valid":{"values":1}
+,"values":{"depend":1}
+,"depend":{"supported":1}
+,"supported":{"platform":1}
+,"platform":{"your":1,"info":1}
+,"your":{"product":1,"platform":1}
+,"product":{"section":1}
+,"section":{"1.0":1}
+,"1.0":{"release":1}
+,"release":{"notes":1}
+,"notes":{"determine":1}
+,"determine":{"your":1}
+}
+;Search.control.loadWordPairs(pairs);

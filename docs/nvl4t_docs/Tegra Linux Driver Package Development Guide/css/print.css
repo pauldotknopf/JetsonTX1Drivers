@@ -1,0 +1,21 @@
+/* Print CSS */
+
+.ww_skin_breadcrumbs {
+    color: black;
+
+    /* http://www.webdesignerwall.com/tutorials/cross-browser-css-gradient/ */
+    background: transparent;
+    filter: none;
+}
+
+.ww_skin_page_toolbar {
+    display: none;
+}
+
+.ww_social {
+    display: none;
+}
+
+div#disqus_thread {
+    display: block;
+}

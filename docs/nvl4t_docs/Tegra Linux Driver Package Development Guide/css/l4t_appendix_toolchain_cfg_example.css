@@ -1,0 +1,83 @@
+div.Normal, caption.Normal
+{
+  font-family: Trebuchet MS, Arial, FreeSans, sans-serif;
+  font-size: small;
+}
+
+div.Heading_1, caption.Heading_1
+{
+  color: #004831;
+  font-family: Trebuchet MS, Arial, FreeSans, sans-serif;
+  font-size: xx-large;
+  margin-bottom: 5pt;
+  margin-left: 36pt;
+  margin-top: 12pt;
+  padding-top: 11pt;
+  text-align: left;
+}
+
+div.Body_Text, caption.Body_Text
+{
+  font-family: Trebuchet MS, Arial, FreeSans, sans-serif;;
+  font-size: small;
+  margin-bottom: 12pt;
+  margin-left: 36pt;
+  margin-top: 6pt;
+}
+
+div.Code, caption.Code
+{
+  background-color: #F2F2F2;
+  font-family: "Courier New";
+  font-size: small;
+  margin-left: 54pt;
+  overflow: visible;
+  padding-bottom: 3pt;
+  padding-top: 3pt;
+  vertical-align: baseline;
+  white-space: pre;
+}
+
+span.Default_Paragraph_Font
+{
+  font-family: Trebuchet MS, Arial, FreeSans, sans-serif;;
+}
+
+span.Code_Char
+{
+  font-family: "Courier New";
+}
+
+span.Hyperlink
+{
+  color: #006445;
+  text-decoration: underline;
+}
+
+table.Table_Normal
+{
+  border-bottom-color: Silver;
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+  border-collapse: collapse;
+  border-left-color: Silver;
+  border-left-style: solid;
+  border-left-width: thin;
+  border-right-color: Silver;
+  border-right-style: solid;
+  border-right-width: thin;
+  border-top-color: Silver;
+  border-top-style: solid;
+  border-top-width: thin;
+  margin-left: -5.4pt;
+  padding-bottom: 0pt;
+  padding-left: 5.4pt;
+  padding-right: 5.4pt;
+  padding-top: 0pt;
+}
+
+img.Default
+{
+  margin-left: .5in;
+}
+

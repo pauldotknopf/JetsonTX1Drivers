@@ -1,0 +1,24 @@
+var pairs =
+{
+"<t-arch":{"ver>":1}
+,"ver>":{"210":1}
+,"210":{"[more":1,"tegra":1}
+,"[more":{"valid":1}
+,"valid":{"values":1}
+,"values":{"tegra":1}
+,"tegra":{"architecture":1,"devices":1}
+,"architecture":{"version":1}
+,"version":{"depend":1,"info":1}
+,"depend":{"supported":1}
+,"supported":{"product":1}
+,"product":{"use":1}
+,"use":{"210":1}
+,"devices":{"section":1}
+,"section":{"1.0":1}
+,"1.0":{"release":1}
+,"release":{"notes":1,"confirm":1}
+,"notes":{"your":1}
+,"your":{"release":1,"tegra":1}
+,"confirm":{"your":1}
+}
+;Search.control.loadWordPairs(pairs);

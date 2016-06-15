@@ -1,0 +1,308 @@
+body
+{
+  font-family: Trebuchet MS, Arial, FreeSans, sans-serif;
+  font-size: 10pt;
+}
+
+/* NV Added */
+iframe {
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  width: 92%;
+  height: 500px;
+
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+
+  -moz-box-shadow: 4px 4px 14px #000;
+  -webkit-box-shadow: 4px 4px 14px #000;
+  box-shadow: 4px 4px 14px #000;
+
+}
+
+/* Default style for links */
+/*                         */
+a:link
+{
+    color: #006445
+}
+
+a:link:active
+{
+    color: #006445
+}
+
+a:visited
+{
+    color: #006445
+}
+
+a:visited:hover
+{
+    color: #76B900
+}
+
+a:link:hover
+{
+    color: #76B900
+}
+
+
+span.WebWorks_Number
+{
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+}
+
+div.WebWorks_Table
+{
+  border: 1px solid #7F7F7F;
+}
+
+div.WebWorks_Table_Row
+{
+  clear: left;
+}
+
+div.WebWorks_Table_Cell
+{
+  float: left;
+}
+
+div.WebWorks_Table_End
+{
+  clear: both;
+  font-size: 1px;
+}
+
+/* MiniTOC */
+/*         */
+
+div.WebWorks_MiniTOC
+{
+  margin: 0 20px 20px 44px;
+  padding: 0;
+  background-color: #FFFFFF; /* Makes bar at top of mini TOC invisible */
+}
+
+/* BEFORE CUSTOMIZATIONS BELOW
+div.WebWorks_MiniTOC_Heading
+{
+    background: #4166A5;
+    background: -moz-linear-gradient(top,  #3B5998 0%, #4166A5 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3B5998), color-stop(100%,#4166A5));
+    background: -webkit-linear-gradient(top,  #3B5998 0%,#4166A5 100%);
+    background: -o-linear-gradient(top,  #3B5998 0%,#4166A5 100%);
+    background: -ms-linear-gradient(top,  #3B5998 0%,#4166A5 100%);
+    background: linear-gradient(to bottom,  #3B5998 0%,#4166A5 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3B5998', endColorstr='#4166A5',GradientType=0 );
+    -moz-border-radius: 2px 2px 0 0;
+    -webkit-border-radius: 2px 2px 0 0;
+    border-radius: 2px 2px 0 0;
+}
+*/
+
+/* NV CUSTOMIZED */
+div.WebWorks_MiniTOC_Heading
+{
+  background: #FFFFFF;
+}
+
+
+dl.WebWorks_MiniTOC_List
+{
+  margin: 0;
+  padding: 0 0 0 16px;
+}
+
+div.WebWorks_MiniTOC > dl.WebWorks_MiniTOC_List
+{
+  padding-left: 0;
+  background: #F7F8FB;
+  -moz-border-radius: 0 0 0 0;
+  -webkit-border-radius: 0 0 0 0;
+  border-radius: 0 0 0 0;
+}
+
+dl.WebWorks_MiniTOC_List > dd
+{
+    margin: 0;
+    padding: 0;
+}
+
+div.WebWorks_MiniTOC_Entry
+{
+  cursor: pointer;
+  margin: 0;
+  padding: 4px;
+}
+
+div.WebWorks_MiniTOC > dl.WebWorks_MiniTOC_List > dd:first-child > div.WebWorks_MiniTOC_Entry
+{
+}
+
+div.WebWorks_MiniTOC_Entry:hover
+{
+  background: #EFEFEE;
+}
+
+a.WebWorks_MiniTOC_Link:link
+{
+  color: #006445;
+  text-decoration: none;
+}
+
+a.WebWorks_MiniTOC_Link:visited
+{
+  color: #006445;
+  text-decoration: none;
+}
+
+div.WebWorks_MiniTOC_Entry:hover > a.WebWorks_MiniTOC_Link:link
+{
+  color: #76B900;
+}
+
+div.WebWorks_MiniTOC_Entry:hover > a.WebWorks_MiniTOC_Link:visited
+{
+  color: #76B900;
+}
+
+/* Related Topics */
+/*                */
+dl.Related_Topics_List
+{
+  margin: 20px;
+  padding: 0;
+  background: white;
+  border: 1px solid #A4A4A4;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+
+dt.Related_Topics_Title
+{
+    font-weight: bold;
+    background: #ebf1f6;
+    background: -moz-linear-gradient(top,  #ebf1f6 0%, #ebf1f6 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ebf1f6), color-stop(100%,#ebf1f6));
+    background: -webkit-linear-gradient(top,  #ebf1f6 0%,#ebf1f6 100%);
+    background: -o-linear-gradient(top,  #ebf1f6 0%,#ebf1f6 100%);
+    background: -ms-linear-gradient(top,  #ebf1f6 0%,#ebf1f6 100%);
+    background: linear-gradient(to bottom,  #ebf1f6 0%,#ebf1f6 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebf1f6', endColorstr='#ebf1f6',GradientType=0 );
+    -moz-border-radius: 2px 2px 0 0;
+    -webkit-border-radius: 2px 2px 0 0;
+    border-radius: 2px 2px 0 0;
+    margin: 0;
+    padding: 4px;
+    color: white;
+}
+
+dd.Related_Topics_Entry
+{
+  cursor: pointer;
+  margin: 0;
+  padding: 4px;
+}
+
+dl.Related_Topics_List > dd.Related_Topics_Entry:last-child
+{
+}
+
+dd.Related_Topics_Entry:hover
+{
+  background: #EFEFEE;
+  color: black;
+}
+
+dd.Related_Topics_Entry a:link
+{
+  color: #4166A5;
+  text-decoration: none;
+}
+
+dd.Related_Topics_Entry a:visited
+{
+  color: #006445;
+  text-decoration: none;
+}
+
+dd.Related_Topics_Entry:hover a:link
+{
+  color: #76B900;
+  text-decoration: none;
+}
+
+dd.Related_Topics_Entry:hover a:visited
+{
+  color: #76B900;
+  text-decoration: none;
+}
+
+/* LinkedIn Share */
+/*                */
+span#social_linkedin {
+  margin-right: 12pt;
+  vertical-align: -7px;
+}
+
+/* Google +1 */
+/*           */
+span#social_google_plus1 {
+  vertical-align: -7px;
+}
+
+.Search_Result_Highlight
+{
+    background-color: #a5ff06; /* Monochromatic version of NV Green */
+}
+
+td.Header_Left
+{
+  position: top;
+  text-align: left;
+}
+
+td.Header_Right
+{
+  position: top;
+  font-family: Trebuchet MS, Arial, FreeSans, sans-serif;
+  font-size: large;
+  font-weight: bold;
+  text-align: right;
+}
+
+
+td.Footer_Left
+{
+  position: top;
+  text-align: left;
+  font-family: Trebuchet MS, Arial, FreeSans, sans-serif;
+  font-size: x-small;
+}
+
+td.Footer_Right
+{
+  position: top;
+  text-align: right;
+  font-family: Trebuchet MS, Arial, FreeSans, sans-serif;
+  font-size: x-small;
+}
+
+td.Footer_Center
+{
+  font-family: Trebuchet MS, Arial, FreeSans, sans-serif;
+  text-align: center;
+  font-size: x-small;
+}
+
+div.FaqDropDown:hover
+{
+    color: #76B900
+}

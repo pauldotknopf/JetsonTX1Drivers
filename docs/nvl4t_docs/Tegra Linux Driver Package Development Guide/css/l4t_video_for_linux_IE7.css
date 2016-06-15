@@ -1,0 +1,30 @@
+.List_Number > span.WebWorks_Number
+{
+  text-indent: -18pt;
+}
+
+.List_Number > span.WebWorks_Number > *
+{
+  text-indent: 0;
+}
+
+.List_Bullet_2 > span.WebWorks_Number
+{
+  text-indent: -18pt;
+}
+
+.List_Bullet_2 > span.WebWorks_Number > *
+{
+  text-indent: 0;
+}
+
+.List_Bullet > span.WebWorks_Number
+{
+  text-indent: -18pt;
+}
+
+.List_Bullet > span.WebWorks_Number > *
+{
+  text-indent: 0;
+}
+

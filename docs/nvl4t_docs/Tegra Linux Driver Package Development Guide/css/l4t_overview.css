@@ -1,0 +1,103 @@
+div.Normal, caption.Normal
+{
+  font-family: Trebuchet MS, Arial, FreeSans, sans-serif;
+  font-size: small;
+}
+
+div.Heading_1, caption.Heading_1
+{
+  color: #004831;
+  font-family: Trebuchet MS, Arial, FreeSans, sans-serif;
+  font-size: xx-large;
+  margin-bottom: 5pt;
+  margin-left: 36pt;
+  margin-top: 12pt;
+  padding-top: 11pt;
+  text-align: left;
+}
+
+div.Body_Text, caption.Body_Text
+{
+  font-family: Trebuchet MS, Arial, FreeSans, sans-serif;;
+  font-size: small;
+  margin-bottom: 12pt;
+  margin-left: 36pt;
+  margin-top: 6pt;
+}
+
+div.Cell_Heading, caption.Cell_Heading
+{
+  font-family: Trebuchet MS, Arial, FreeSans, sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  margin-bottom: 1pt;
+  margin-top: 6pt;
+  padding-left: 4px;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+div.Cell_Text, caption.Cell_Text
+{
+  font-family: Trebuchet MS, Arial, FreeSans, sans-serif;
+  font-size: small;
+  margin-bottom: 2pt;
+  margin-top: 2pt;
+}
+
+div.Cell_Bullet, caption.Cell_Bullet
+{
+  font-family: Trebuchet MS, Arial, FreeSans, sans-serif;
+  font-size: 10pt;
+  margin-bottom: 2pt;
+  margin-left: 7.9pt;
+  margin-top: 2pt;
+  padding-left: 4pt;
+  text-indent: -7.9pt;
+}
+
+span.Default_Paragraph_Font
+{
+  font-family: Trebuchet MS, Arial, FreeSans, sans-serif;;
+}
+
+span.Emphasis
+{
+  font-size: small;
+  font-style: italic;
+}
+
+span.Strong
+{
+  font-family: Trebuchet MS, Arial, FreeSans, sans-serif;;
+  font-size: small;
+  font-weight: bold;
+}
+
+table.Table_Normal
+{
+  border-bottom-color: Silver;
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+  border-collapse: collapse;
+  border-left-color: Silver;
+  border-left-style: solid;
+  border-left-width: thin;
+  border-right-color: Silver;
+  border-right-style: solid;
+  border-right-width: thin;
+  border-top-color: Silver;
+  border-top-style: solid;
+  border-top-width: thin;
+  margin-left: -5.4pt;
+  padding-bottom: 0pt;
+  padding-left: 5.4pt;
+  padding-right: 5.4pt;
+  padding-top: 0pt;
+}
+
+img.Default
+{
+  margin-left: .5in;
+}
+

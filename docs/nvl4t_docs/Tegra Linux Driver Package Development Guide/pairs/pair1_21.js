@@ -1,0 +1,22 @@
+var pairs =
+{
+"cuda":{"nvidia":1,"technology":1}
+,"nvidia":{"parallel":1,"cuda":1}
+,"parallel":{"computing":1}
+,"computing":{"platform":1,"performance":1}
+,"platform":{"programming":1}
+,"programming":{"model":1}
+,"model":{"[more":1}
+,"[more":{"nvidia":1}
+,"technology":{"enables":1}
+,"enables":{"dramatic":1}
+,"dramatic":{"increases":1}
+,"increases":{"computing":1}
+,"performance":{"harnessing":1}
+,"harnessing":{"power":1}
+,"power":{"graphics":1}
+,"graphics":{"processing":1}
+,"processing":{"unit":1}
+,"unit":{"(gpu)":1}
+}
+;Search.control.loadWordPairs(pairs);

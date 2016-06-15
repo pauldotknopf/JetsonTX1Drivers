@@ -1,0 +1,23 @@
+var pairs =
+{
+"<board_and_rev>":{"e2220-1170":1}
+,"e2220-1170":{"p2371-0000":1,"jetson-tx1":1}
+,"p2371-0000":{"p2371-2180":1}
+,"p2371-2180":{"[more":1}
+,"[more":{"valid":1}
+,"valid":{"values":1}
+,"values":{"depend":1}
+,"depend":{"supported":1}
+,"supported":{"board":1}
+,"board":{"use":1,"revision":1}
+,"use":{"e2220-1170":1}
+,"jetson-tx1":{"section":1}
+,"section":{"1.0":1}
+,"1.0":{"release":1}
+,"release":{"notes":1,"confirm":1}
+,"notes":{"your":1}
+,"your":{"release":1,"board":1}
+,"confirm":{"your":1}
+,"revision":{"info":1}
+}
+;Search.control.loadWordPairs(pairs);

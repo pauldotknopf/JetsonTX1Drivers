@@ -1,0 +1,257 @@
+/*
+ * Copyright (c) 2011-2016, NVIDIA CORPORATION. All rights reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a
+ * copy of this software and associated documentation files (the "Software"),
+ * to deal in the Software without restriction, including without limitation
+ * the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ * and/or sell copies of the Software, and to permit persons to whom the
+ * Software is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+ * THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ * DEALINGS IN THE SOFTWARE.
+ */
+
+
+=> PRE-REQUISITES :
+
+
+=> PREREQUISITES:
+
+1. You must install GStreamer-0.10 on the target board using apt-get, as follows:
+
+   sudo apt-get install gstreamer-tools gstreamer0.10-alsa gstreamer0.10-plugins-good gstreamer0.10-plugins-base gstreamer0.10-plugins-ugly gstreamer0.10-plugins-bad
+
+   Note: Support for hardware accelerated H.263 and MPEG4 encoders has been removed. To use open source H.263 and MPEG4 encoders, the gst-ffmpeg library must be
+   manually compiled and installed from source. The sources are located at http://gstreamer.freedesktop.org/src/gst-ffmpeg.
+
+2. To check the running gstreamer version, use the following command before you start using the nvgstcapture-0.10 application:
+
+   gst-inspect --version
+
+3. Execute the following commands on the target board's Ubuntu command line:
+
+   export DISPLAY=:0
+   xinit &
+
+4.  Make the following amixer settings (for K3.10) to enable audio capture using the headset mic on "PM375" before running the nvgstcapture-0.10 application:
+
+  a. Enable audio capture through external headset:
+
+    amixer cset name="Stereo ADC MIXL ADC2 Switch" 0
+    amixer cset name="Stereo ADC MIXR ADC2 Switch" 0
+    amixer cset name="Int Mic Switch" 0
+    amixer cset name="ADC Capture Switch" 1
+    amixer cset name="RECMIXL BST1 Switch" 0
+    amixer cset name="RECMIXR BST1 Switch" 0
+    amixer cset name="RECMIXL BST2 Switch" 1
+    amixer cset name="RECMIXR BST2 Switch" 1
+    amixer cset name="Stereo ADC L1 Mux" "ADC"
+    amixer cset name="Stereo ADC R1 Mux" "ADC"
+    amixer cset name="Stereo ADC MIXL ADC1 Switch" 1
+    amixer cset name="Stereo ADC MIXR ADC1 Switch" 1
+    amixer cset name="Stereo ADC MIXL ADC2 Switch" 0
+    amixer cset name="Stereo ADC MIXR ADC2 Switch" 0
+    amixer cset name="IN1 Mode Control" "Single ended"
+    amixer cset name="IN2 Mode Control" "Single ended"
+    amixer cset name="Mic Jack Switch" 1
+
+  b. Disable audio capture through headset:
+
+    amixer cset name="RECMIXL BST2 Switch" 0
+    amixer cset name="RECMIXR BST2 Switch" 0
+    amixer cset name="Stereo ADC MIXL ADC1 Switch" 0
+    amixer cset name="Stereo ADC MIXR ADC1 Switch" 0
+    amixer cset name="Mic Jack Switch" 0
+
+=> NvGstCapture Usage:
+
+* The nvgstcapture-0.10 application can capture audio and video data using the microphone and camera on the device and encapsulate encoded AV data in a container file.
+
+* The nvgstcapture-0.10 application supports both command-line (with automation) and runtime options. For complete usage information, use the following command:
+
+   ./nvgstcapture-0.10 --help
+
+=> NvGstCapture Application Options:
+
+* Command-line options:
+
+    Usage: ./nvgstcapture-0.10 --option
+
+           --or--
+
+           ./nvgstcapture-0.10 -option
+
+  -W, --prev_res            Preview width and height (Refer Preview Capture Resolution support)        eg. -W 3
+  -V, --vcap_res            Video Capture width and height (Refer Video Capture Resolution support)    eg. -V 3
+  -I, --icap_res            Image Capture width and height (Refer Image capture Resolution support)    eg. -I 3
+  -m, --mode                Capture mode value (2=video 1=still)                                       eg. -m 2
+  -v, --video_enc           Video encoder type (0=H.264 1=VP8 2=MPEG-4(Software) 3=VP8(Software))      eg. -v 0
+  -J, --image_enc           Image encoder type (0=jpeg_HW[nv_omx_jpegenc] 1=jpeg_SW[jpegenc]
+                               2=jpeg_HW[nvjpegenc])                                                   eg. -J 2
+  -k, --file_type           Container file type (0=MP4 1=3GP 2=AVI)                                    eg. -k 0
+  --frate                   Capture frame rate (min = 5, max = 30)                                     eg. --frate 30
+  --svs                     Chain for video preview (nv_omx_videosink: for overlay,
+                               nvxvimagesink: for xvimagesink)
+  --file-name               File name to be used for images or videos. nvgsttest is used by default    eg. --file-name="test"
+
+  * USB-Camera specific options:
+
+  --usbcam                          Use USB Camera input
+  -H, --usbcam_type                 USB Camera type, 0=YUV, 1=MJPEG
+  --testsrc                         Use video test source input
+  -M, --cap_format                  Capture Format, 0=I420, 1=YV12, 2=NV12, 3=YUY2, 4=UYVY, 5=YVYU, 6=Y444(Use --usbcam for cap format 0,1,3 & --testsrc for cap format 2,4,5,6)
+  --cap-dev-node                    Video capture device node (0=/dev/video0[default], 1=/dev/video1, 2=/dev/video2) e.g., --cap-dev-node=0
+
+  NOTE:
+   a) USB-Camera Image capture Resolution support
+      => 640x480  (YUV & MJPEG Mode)
+   b) USB-Camera Video capture Resolution support
+      => 640x480  (YUV & MJPEG Mode)
+      => 1280x720 (MJPEG Mode)
+
+  * VIP-specific options:
+
+  --vip                             Use Video input
+  --format_type                     Capture format type: 0=NTSC, 1=PAL
+  --frame_type                      Capture frame type: 0=Progressive, 1=Interlaced
+
+* Runtime options:
+
+   * Quit : 'q'
+
+   * Set Capture Mode:
+      mo:<val>
+          (2): video
+          (1): image
+
+     Get Capture Mode:
+      gmo
+
+   * Capture: enter 'j'
+
+      --or--
+
+      'j' followed by a timer (eg. jx5000, capture after 5 seconds) OR
+      'j' followed by multishot count (eg. j:6, capture 6 images)
+
+      Timer and multishot values are optional. Capture defaults to single shot when the timer is set to 0s.
+
+   * Start Recording: '1'
+     Stop Recording: '0'
+
+   * Force IDR frame on video encoder: enter 'f'
+
+   * Set Container file type (0=MP4 1=3GP 2=AVI):
+      k:<val> (for example, k:0)
+
+     Get Container file type:
+      gk
+
+   * Set Image Capture Resolution (only in image mode):
+      icr:<val> (for example, icr:3)
+
+     Get Image Capture Resolution:
+      gicr
+
+   * Set Video Capture Resolution (only in video mode):
+      vcr:<val> (for example, vcr:3)
+
+     Get Video Capture Resolution:
+      gvcr
+
+   * Set Capture Device Node (To select a camera when multiple usb cameras are connected):
+      cdn:<val> Val = 0,1,2...
+     Get Capture Device Node:
+      gcdn
+
+   * Set Audio Encoder:
+      ae:<val>, val= 0 (aac), 1 (amr)
+     Get Audio Encoder:
+      gae
+
+   * Set Image Encoder:
+      ie:<val>, val= 0 (jpeg_HW[nv_omx_jpegenc]), 1 (jpeg_SW[jpegenc]), 2 (jpeg_HW[nvjpegenc])
+     Get Image Encoder:
+      gie
+
+   * Set Video Encoder:
+      ve:<val>, 0=h264[nv_omx_h264enc] 1=vp8[nv_omx_vp8enc] 2=mpeg4_SW[ffenc_mpeg4]) 3=H263_SW[ffenc_h263][Set Default Resolution:704x576(4CIF)]
+     Get Video Encoder:
+      gve
+
+     NOTE: h263 and mpeg4 hardware accelerated encoders are not supported.
+
+   For information on these options, use the --help option.
+
+=> Preview Capture Resolution support
+
+   <val> : width x height
+
+   <0> : 176 x 144
+   <1> : 320 x 240
+   <2> : 640 x 480
+   <3> : 768 x 432
+   <4> : 720 x 480
+   <5> : 1280 x 720
+   <6> : 1920 x 1080
+
+=> Image capture Resolution support
+
+   <val> : width x height
+
+   <0> : 176 x 144
+   <1> : 320 x 240
+   <2> : 480 x 480
+   <3> : 640 x 480
+   <4> : 800 x 600
+   <5> : 720 x 480
+   <6> : 1280 x 720
+   <7> : 1280 x 960 (1 MP)
+   <8> : 1600 x 1200 (2 MP)
+   <9> : 2048 x 1536 (3 MP)
+   <10> : 2240 x 1680 (4 MP)
+   <11> : 2560 x 1920 (5 MP)
+   <12> : 4096 x 3072 (13 MP)
+
+=> Video Capture Resolution support
+
+   <val> : width x height
+
+  * H.264/MPEG-4/VP8 (supports "MP4/3GP/AVI" container)
+
+   <0> : 176 x 144
+   <1> : 320 x 240
+   <3> : 640 x 480
+   <5> : 720 x 480
+   <6> : 1280 x 720
+   <7> : 1920 x 1080
+
+  * H.263 (supports "MP4/3GP/AVI" container)
+
+    <0> : 176 x 144 (QCIF)
+    <2> : 352 x 288 (CIF)
+    <4> : 704 x 576 (4CIF)
+
+    NOTE: USB camera capture only supports 176x144 resolution for H263 encode
+
+
+NOTES:
+
+1. The nvgstcapture-0.10 application generates image and video output files in the same directory as the application itself.
+
+2. Filenames for image and video content are in the formats "nvgsttest(%d).jpg" and "nvgsttest(%d).mp4" respectively,
+   where %d is a counter starting from 0 every time you run the application. Rename or move files between runs, to avoid
+   overwriting results you want to save.
+
+3. The nvgstcapture-0.10 application also supports camerabin2, which require gstreamer version 0.10.36 at a minimum.
+
+4. For USB camera use "--cap-dev-node" command line option to specify capture node.

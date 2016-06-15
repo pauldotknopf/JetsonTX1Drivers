@@ -1,0 +1,10 @@
+TIMEOUT 30
+DEFAULT primary
+
+MENU TITLE p2371-0000 SD Card boot options
+
+LABEL primary
+      MENU LABEL primary kernel
+      LINUX /boot/Image
+      FDT /boot/tegra210-jetson-e-base-p2595-0000-a00.dtb
+      APPEND fbcon=map:1 console=tty0 console=ttyS0,115200n8 tegraid=21.1.1.0.0 ddr_die=1536M@2048M ddr_die=1536M@3584M section=256M memtype=0 vpr_resize usb_port_owner_info=0 lane_owner_info=0 emc_max_dvfs=0 touch_id=0@63 video=tegrafb no_console_suspend=1 debug_uartport=lsport,0 earlyprintk=uart8250-32bit,0x70006000 maxcpus=4 usbcore.old_scheme_first=1 lp0_vec=${lp0_vec} nvdumper_reserved=${nvdumper_reserved} core_edp_mv=1000 core_edp_ma=4000 gpt android.kerneltype=normal androidboot.touch_vendor_id=0 androidboot.touch_panel_id=63 androidboot.touch_feature=0 androidboot.bootreason=pmc:software_reset,pmic:0x0 root=/dev/mmcblk1p1 rw rootwait
